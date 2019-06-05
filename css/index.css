@@ -2,6 +2,13 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Barlow Regular'), local('Barlow-Regular'), url(https://fonts.gstatic.com/s/barlow/v3/7cHpv4kjgoGqM7E_DMs8.ttf) format('truetype');
+}
 .link-style {
   color: black;
   font-size: 1em;
@@ -96,7 +103,8 @@ video {
   padding: 0;
   border: 0;
   font-size: 100%;
-  font: inherit;
+  font-family: 'Barlow', sans-serif;
+  font-style: inherit;
   vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -120,6 +128,11 @@ body {
   align-content: center;
   margin: auto;
   padding: 0px 30px;
+}
+@media (max-width: 500px) {
+  body {
+    width: 100%;
+  }
 }
 ol,
 ul {
@@ -148,13 +161,17 @@ html,
 body {
   height: 100%;
 }
+hr {
+  border-color: lightgrey;
+  opacity: 0.3;
+}
 nav ul a li {
   color: black;
   font-size: 1em;
   text-transform: uppercase;
   margin: 5px 20px;
 }
-nav ul a:hover {
+nav ul a li:hover {
   text-decoration: underline;
   color: grey;
 }
@@ -162,9 +179,114 @@ nav ul {
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-end;
+  margin: 30px 0px;
+}
+@media (max-width: 500px) {
+  nav ul {
+    flex-flow: column nowrap;
+    text-align: center;
+  }
 }
 .top-section {
-  background-color: #c8daf7;
-  width: 90%;
-  padding: 30px 10px;
+  background-color: #cad0da;
+  width: 100%;
+  padding: 30px 20px 70px 20px;
+  border-radius: 5px;
+  margin: 30px 0px;
+}
+.top-section h1 {
+  font-size: 2rem;
+  padding: 5px;
+}
+.top-section h2 {
+  font-size: 1.25rem;
+  padding: 5px;
+}
+.top-section p {
+  padding: 5px;
+}
+.top-section button {
+  padding: 10px 20px;
+  margin-top: 20px;
+  border-radius: 1px;
+  background-color: gray;
+  font-size: 1.1rem;
+  color: white;
+  border: none;
+}
+.top-section img {
+  width: 30%;
+  margin: 20px 5px;
+  border-radius: 2px;
+}
+.middle-section {
+  display: flex;
+  flex-flow: row nowrap;
+}
+@media (max-width: 500px) {
+  .middle-section {
+    flex-flow: column nowrap;
+  }
+}
+.middle-section .left-div {
+  width: 50%;
+  padding-right: 15px;
+  line-height: 1.25rem;
+}
+.middle-section .left-div h1 {
+  font-size: 1.5rem;
+  padding: 10px 0px;
+}
+@media (max-width: 500px) {
+  .middle-section .left-div {
+    width: 100%;
+    padding: 0px;
+    margin: 20px 0px;
+  }
+}
+.middle-section .right-div {
+  width: 50%;
+  padding-left: 15px;
+}
+.middle-section .right-div h1 {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+.middle-section .right-div li {
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 2px;
+}
+@media (max-width: 500px) {
+  .middle-section .right-div {
+    width: 100%;
+    padding: 0px;
+    margin: 20px 0px;
+  }
+}
+.bottom-section {
+  margin: 20px 0px;
+}
+.bottom-section .table-title {
+  font-size: 1.5em;
+}
+.bottom-section table {
+  border: 1px solid black;
+  padding: 10px;
+  width: 100%;
+}
+.bottom-section table tr {
+  padding: 5px;
+}
+.bottom-section table td,
+.bottom-section table th {
+  border: 1px solid black;
+  text-align: left;
+  padding: 5px;
+}
+footer {
+  background-color: gray;
+  text-align: center;
+  color: white;
+  margin: 20px 0px 50px 0x;
 }

@@ -4,10 +4,14 @@
    License: none (public domain)
 */
 
+@import url('https://fonts.googleapis.com/css?family=Barlow&display=swap');
+
 // Variables ------
 
 @uppercase: uppercase;
-@bluecp: #c8daf7;
+@bluecp: #cad0da;
+@text-padding: 5px;
+@table-border-style: 1px solid black;
 
 // Mixins ------
 
@@ -39,7 +43,8 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font: inherit;
+	font-family: 'Barlow', sans-serif;
+	font-style: inherit;
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -54,6 +59,9 @@ body {
 	align-content: center;
 	margin: auto;
 	padding: 0px 30px;
+	@media (max-width: 500px) {
+		width: 100%;
+	}
 }
 ol, ul {
 	list-style: none;
@@ -80,6 +88,11 @@ html, body {
 	height: 100%;
 }
 
+hr {
+	border-color: lightgrey;
+	opacity: .3;
+}
+
 // Nav section -----
 
 nav ul a li{
@@ -87,7 +100,7 @@ nav ul a li{
 	margin: 5px 20px;
 }
 
-nav ul a:hover {
+nav ul a li:hover {
 	.link-hover();
 }
 
@@ -95,12 +108,127 @@ nav ul {
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: flex-end;
+	margin: 30px 0px;
+	@media (max-width: 500px) {
+		flex-flow: column nowrap;
+		text-align: center;
+	}
 }
 
 // Top Section -----
 
 .top-section {
 	background-color: @bluecp;
-	width: 90%;
-	padding: 30px 10px;
+	width: 100%;
+	padding: 30px 20px 70px 20px;
+	border-radius: 5px;
+	margin: 30px 0px;
+	h1 {
+		font-size: 2rem;
+		padding: @text-padding;
+	}
+
+	h2 {
+		font-size: 1.25rem;
+		padding: @text-padding;
+	}
+
+	p {
+		padding: @text-padding;
+	}
+
+	button {
+		padding: 10px 20px;
+		margin-top: 20px;
+		border-radius: 1px;
+		background-color: gray;
+		font-size: 1.1rem;
+		color: white;
+		border: none;
+	}
+
+	img {
+		width: 30%;
+		margin: 20px 5px;
+		border-radius: 2px;
+	}
+
 }
+
+// Middle Section -----
+
+.middle-section {
+	display: flex;
+	flex-flow: row nowrap;
+	@media (max-width: 500px){
+		flex-flow: column nowrap;
+	}
+
+	.left-div {
+		width: 50%;
+		padding-right: 15px;
+		line-height: 1.25rem;
+		h1 {
+			font-size: 1.5rem;
+			padding: 10px 0px;
+		}
+		@media (max-width: 500px) {
+			width: 100%;
+			padding: 0px;
+			margin: 20px 0px;
+		}
+	}
+
+	.right-div {
+		width: 50%;
+		padding-left: 15px;
+		h1{
+			font-size: 1.1rem;
+			margin-bottom: 5px;
+		}
+		li {
+			border: @table-border-style;
+			padding: 10px;
+			border-radius: 2px;
+		}
+		@media (max-width: 500px) {
+			width: 100%;
+			padding: 0px;
+			margin: 20px 0px;
+		}
+	}
+}
+
+// Bottom Section -----
+
+.bottom-section {
+	margin: 20px 0px;
+	.table-title {
+		font-size: 1.5em;
+	}
+	table{
+		border: @table-border-style;
+		padding: 10px;
+		width: 100%;
+		tr {
+			padding: 5px;
+		}
+			td,th {
+				border: @table-border-style;
+				text-align: left;
+				padding: 5px;
+			}
+		}
+	}
+
+// Footer -----
+footer {
+	background-color: gray;
+	text-align: center;
+	color: white;
+	margin: 20px 0px 50px 0x;
+	
+
+} 
+
+
