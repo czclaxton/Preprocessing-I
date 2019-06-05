@@ -4,6 +4,24 @@
    License: none (public domain)
 */
 
+// Variables ------
+
+@uppercase: uppercase;
+@bluecp: #c8daf7;
+
+// Mixins ------
+
+.link-style {
+	color: black;
+	font-size: 1em;
+	text-transform: @uppercase;
+} 
+
+.link-hover {
+	text-decoration: underline;
+	color: grey;
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -31,6 +49,11 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	width: 1000px;
+	display: flex;
+	align-content: center;
+	margin: auto;
+	padding: 0px 30px;
 }
 ol, ul {
 	list-style: none;
@@ -54,6 +77,30 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
 }
 
+// Nav section -----
+
+nav ul a li{
+	.link-style();
+	margin: 5px 20px;
+}
+
+nav ul a:hover {
+	.link-hover();
+}
+
+nav ul {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-end;
+}
+
+// Top Section -----
+
+.top-section {
+	background-color: @bluecp;
+	width: 90%;
+	padding: 30px 10px;
+}
